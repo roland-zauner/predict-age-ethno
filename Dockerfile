@@ -9,4 +9,6 @@ FROM rstudio/r-base:4.2-jammy
 
 RUN mkdir /home/scripts /home/input /home/output
 
+RUN R -e 'install.packages("magrittr","dplyr")'
+
 COPY ./scripts /home/scripts
