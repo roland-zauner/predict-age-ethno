@@ -42,3 +42,6 @@ function(pr) {
         # Overwrite the default serializer to return unboxed JSON
         pr_set_serializer(serializer_unboxed_json())
 }
+
+##execute: plumber::plumb(file='predict-age-ethno/predict-age-ethno/plumber.R')$run()
+
