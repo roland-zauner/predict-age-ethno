@@ -7,6 +7,6 @@
 ## https://github.com/rstudio/r-docker
 FROM rstudio/r-base:4.2-jammy
 
-RUN mkdir /home/scripts /home/data
+RUN mkdir /home/scripts /home/input /home/output
 
-COPY ./predict-age-ethno /home/scripts
+COPY ./scripts /home/scripts
