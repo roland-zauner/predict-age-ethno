@@ -115,5 +115,5 @@ if(file.exists(arg[1])==FALSE){stop("Rscript aborted due to missing genotype fil
 res <- dplyr::as_tibble(as.data.frame(predict.ancestry(snp.dat.file=arg[1], aisnp.1k.file=arg[2])),rownames="ethno") %>% 
   dplyr::mutate(ethno=gsub("s.","",ethno))
 
-write.table(res, file="output/pred-ethno-result.txt",row.names=F)
+write.table(res, file="/home/output/pred-ethno-result.txt",row.names=F)
 
