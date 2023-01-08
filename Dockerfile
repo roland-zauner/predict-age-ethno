@@ -7,8 +7,11 @@
 ## https://github.com/rstudio/r-docker
 FROM rstudio/r-base:4.2-jammy
 
+## provide required folders - these should be mapped to volumes in the container
 RUN mkdir /home/scripts /home/input /home/output
 
-RUN R -e 'install.packages("magrittr","dplyr")'
+## the following R libraries are required
+RUN R -q -e 'install.packages(c("magrittr"),("dplyr"))'
 
+## R scripts and essential data
 COPY ./scripts /home/scripts
