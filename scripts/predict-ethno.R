@@ -8,9 +8,9 @@
 ##            is used to calculate a summary metric ratio based on            ##
 ##            the product of allele frequencies derived from                  ##
 ##            1000 genome data, see: ftp://ftp.1000genomes.ebi.ac.uk/         ##
-## output data: predict-result.txt                                            ##
+## output data: pred-ethno-result.txt                                         ##
 ## -------------------------------------------------------------------------- ##
-## version: 2023-01-07-2015                                                   ##
+## version: 2023-01-08-1600                                                   ##
 ## Copyright (C) Roland Zauner 2023                                           ##
 ##                                                                            ##
 ################################################################################
@@ -23,13 +23,16 @@ predict.ancestry <- function(snp.dat.file, aisnp.1k.file) {
   cat("\n-------------------------------------------------------------------------------------------------------\n")
   cat("Copyright (C) 2023 Roland Zauner\n
     This program comes with ABSOLUTELY NO WARRANTY.
-    This is free software, and you are welcome to redistribute it
+    This is free software for academic demonstration purpose, and you are welcome to redistribute it
     under conditions of the GNU GENERAL PUBLIC LICENSE (see <https://www.gnu.org/licenses/>) 
     which also applies for underlying software packages used by this script, eg statistical software R.
     The GNU General Public License does not permit incorporating your program
     into proprietary programs.\n
-    Pls do also consider any liabilities derived from using Kidd & Seldin AINSP panel as well as
-    data from the 1000 genome project.")
+    This program utilises allele frequencies derived from 1000 genome project data and applies
+    the Kidd and Seldin AISNP panel for ethnicity prediction.
+    Non-academic use may result in royalties and may be subject to licensing conditions and or restrictions.
+    It is the user's responsibility to verify any regulations in this regard and comply with respective agreements.
+    For further details see README.md file on https://github.com/roland-zauner/predict-age-ethno.")
   cat("\n-------------------------------------------------------------------------------------------------------\n")
   cat("Loading SNP data file & calculating probability scores...\n")
   library(magrittr)

@@ -10,8 +10,11 @@ FROM rstudio/r-base:4.2-jammy
 ## provide required folders - these should be mapped to volumes in the container
 RUN mkdir /home/scripts /home/input /home/output
 
-## the following R libraries are required
-RUN R -q -e 'install.packages(c("magrittr","dplyr","readr"),repos = "http://cran.us.r-project.org")'
+## the following R libraries are required for R script predict-ethno.R
+RUN R -q -e 'install.packages(c("magrittr","dplyr","readr","BiocManager"),repos = "http://cran.us.r-project.org")'
+
+## the following R libraries are required in addition for R script predict-age.R
+RUN R -q -e 'BiocManager::install(c("minfi","wateRmelon"))'
 
 ## R scripts and essential data
 COPY ./scripts /home/scripts
