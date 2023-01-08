@@ -108,9 +108,9 @@ arg <- args
 
 if(length(arg)==0){stop("Rscript aborted due to missing arguments, pls provide genotype and 1000 genome allele frequency (aisnp.1kg.RData) file...")}
 
-if(file.exists(arg[1])==FALSE){stop("Rscript aborted due to missing 1000 genome allele frequency file, pls provide aisnp.1kg.RData file ...")}
+if(file.exists(arg[2])==FALSE){stop("Rscript aborted due to missing 1000 genome allele frequency file, pls provide aisnp.1kg.RData file ...")}
 
-if(file.exists(arg[2])==FALSE){stop("Rscript aborted due to missing genotype file, pls Infinium SNP array txt file ...")}
+if(file.exists(arg[1])==FALSE){stop("Rscript aborted due to missing genotype file, pls provide Infinium SNP array txt file ...")}
 
 res <- dplyr::as_tibble(as.data.frame(predict.ancestry(snp.dat.file=arg[1], aisnp.1k.file=arg[2])),rownames="ethno") %>% 
   dplyr::mutate(ethno=gsub("s.","",ethno))

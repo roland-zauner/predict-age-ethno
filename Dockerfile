@@ -11,7 +11,7 @@ FROM rstudio/r-base:4.2-jammy
 RUN mkdir /home/scripts /home/input /home/output
 
 ## the following R libraries are required
-RUN R -q -e 'install.packages(c("magrittr","dplyr"),repos = "http://cran.us.r-project.org")'
+RUN R -q -e 'install.packages(c("magrittr","dplyr","readr"),repos = "http://cran.us.r-project.org")'
 
 ## R scripts and essential data
 COPY ./scripts /home/scripts
