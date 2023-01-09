@@ -1,6 +1,7 @@
 gen-random-dataset.R
 input/*.idat
 *.html
+github-info.txt
 
 # History files
 .Rhistory
