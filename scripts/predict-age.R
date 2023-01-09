@@ -14,7 +14,7 @@
 
 library(magrittr)
 
-predict.age <- function(snp.dat.file, aisnp.1k.file) {
+predict.age <- function(snp.dat.file="~/EthnoPredict/predict-age-ethno/input") {
   t.start <- Sys.time()
   cat("\ninitiating R script for DNA methylation (DNAm) data based age prediction ...")
   cat("\n-------------------------------------------------------------------------------------------------------\n")
@@ -33,7 +33,7 @@ predict.age <- function(snp.dat.file, aisnp.1k.file) {
   cat("Loading DNA methylation raw data provided in green and red channel intensity data (.idat) files ...\n")
 
   ## load .idat files - there are always two files for red/green channel ending with _Red.idat and _Grn.idat
-  rgSet <- minfi::read.metharray.exp(base="~/EthnoPredict/predict-age-ethno/input")
+  rgSet <- minfi::read.metharray.exp(base=snp.dat.file)
   
   ## data background correction and dye bias correction following Triche et al 2013 (https://doi.org/10.1093/nar/gkt090)
   cat("Preprocessing DNA methylation data ...\n")
