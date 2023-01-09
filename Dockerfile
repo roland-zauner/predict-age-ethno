@@ -12,6 +12,9 @@ RUN mkdir /home/scripts /home/input /home/output
 
 ## install linux libs required by R packages
 RUN apt-get update && apt-get install -y libxml2 \
+libxml2-dev \
+libssl-dev \
+libpng-dev \
 && rm -r /var/lib/apt/lists/*
 
 ## the following R libraries are required for R script predict-ethno.R
