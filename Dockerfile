@@ -10,6 +10,10 @@ FROM rstudio/r-base:4.2-jammy
 ## provide required folders - these should be mapped to volumes in the container
 RUN mkdir /home/scripts /home/input /home/output
 
+## install linux libs required by R packages
+RUN apt-get update && apt-get install -y libxml2 \
+&& rm -r /var/lib/apt/lists/*
+
 ## the following R libraries are required for R script predict-ethno.R
 RUN R -q -e 'install.packages(c("magrittr","dplyr","readr","BiocManager"),repos = "http://cran.us.r-project.org")'
 
