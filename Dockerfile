@@ -21,7 +21,7 @@ libpng-dev \
 RUN R -q -e 'install.packages(c("magrittr","dplyr","readr","BiocManager"),repos = "http://cran.us.r-project.org")'
 
 ## the following R libraries are required in addition for R script predict-age.R
-RUN R -q -e 'BiocManager::install(c("minfi","wateRmelon","IlluminaHumanMethylationEPICmanifest"))'
+RUN R -q -e 'BiocManager::install(c("minfi","wateRmelon","IlluminaHumanMethylationEPICmanifest","IlluminaHumanMethylationEPICanno.ilm10b4.hg19"))'
 
 ## R scripts and essential data
 COPY ./scripts /home/scripts
